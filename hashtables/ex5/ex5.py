@@ -1,10 +1,11 @@
 class LinkedList:
-    __init__(self, value):
+    def __init__(self, value):
         self.value = value
         self.next = None
 
 def finder(paths, queries):
     file_paths = {}
+    result = []
     
     for path in paths:
         path_split = path.split('/')
@@ -19,7 +20,14 @@ def finder(paths, queries):
         else:
             file_paths[file_name] = LinkedList(path)
     
-
+    for query in queries:
+        path = file_paths.get(query)
+        if path is None:
+            continue
+        else:
+            while path is not None:
+                result.append(path.value)
+                path = path.next
 
     return result
 
