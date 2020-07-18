@@ -2,11 +2,14 @@
 
 
 
-def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+def finder(paths, queries):
+    file_paths = {}
+    
+    for path in paths:
+        path_split = path.split('/')
+        name_index = len(path_split) - 1
+        file_name = path_split[name_index]
+        file_paths[file_name] = path
 
     return result
 
