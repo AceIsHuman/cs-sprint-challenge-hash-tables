@@ -1,9 +1,18 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    initial_list = {}
+    intersections = {}
 
+    for i in range(len(arrays)):
+        for num in arrays[i]:
+            if i == 0:
+                initial_list[num] = True
+            elif initial_list.get(num) is True:
+                intersections[num] = True
+
+        if i != 0:
+            initial_list = intersections.copy()
+
+    result = list(intersections)
     return result
 
 
