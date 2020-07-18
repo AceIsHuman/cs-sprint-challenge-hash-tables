@@ -1,6 +1,7 @@
-# Your code here
-
-
+class LinkedList:
+    __init__(self, value):
+        self.value = value
+        self.next = None
 
 def finder(paths, queries):
     file_paths = {}
